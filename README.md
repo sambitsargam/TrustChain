@@ -32,7 +32,18 @@ TrustChain/
 - OneChain CLI installed
 - OneChain wallet with testnet ONE tokens
 
-## Installation & Deployment
+## 🚀 Deployment Status
+
+✅ **DEPLOYED TO ONECHAIN TESTNET**
+
+- **Package ID:** `0x0dc730053338d7082f58c0a0e351c1e96f1681398a6fd2d4af68f890cb228fb6`
+- **Registry ID:** `0xa01e504aeb0c04b762cc298be677b9ac1682e43a16ae34463869e4f13bef66fd`
+- **Transaction:** `HiHCS8EwTULKfpVw59BGrHfBcgE1GP6yWtsBggX9TRWd`
+- **Explorer:** [View on OneScan](https://onescan.cc/testnet/object/0x0dc730053338d7082f58c0a0e351c1e96f1681398a6fd2d4af68f890cb228fb6)
+- **Network:** OneChain Testnet
+- **Deployment Date:** March 27, 2026
+
+## Installation & Setup
 
 ### 1. Install OneChain CLI
 
@@ -51,7 +62,21 @@ one client new-address ed25519
 one client faucet
 ```
 
-### 3. Build & Deploy Contract
+### 3. Run Frontend (Already Configured)
+
+The frontend is already configured with the deployed contract addresses.
+
+```bash
+cd TrustChain/frontend
+npm install
+npm run dev
+```
+
+Visit `http://localhost:5173`
+
+### 4. (Optional) Deploy Your Own Instance
+
+If you want to deploy your own instance:
 
 ```bash
 cd TrustChain/contracts
@@ -59,25 +84,7 @@ one move build
 one client publish --gas-budget 50000000 .
 ```
 
-Save the Package ID and Registry ID from the output.
-
-### 4. Configure Frontend
-
-Update `frontend/.env`:
-```
-VITE_PACKAGE_ID=0x<your_package_id>
-VITE_REGISTRY_ID=0x<your_registry_id>
-```
-
-### 5. Run Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Visit `http://localhost:5173`
+Then update `frontend/.env` with your Package ID and Registry ID.
 
 ## Usage
 

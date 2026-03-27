@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SuiClientProvider, WalletProvider } from '@onelabs/dapp-kit';
 import '@onelabs/dapp-kit/dist/index.css';
-import './index.css';
+import './index-new.css';
 import './App.css';
 import App from './App';
 

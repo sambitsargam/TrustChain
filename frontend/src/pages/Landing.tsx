@@ -133,7 +133,7 @@ function Landing() {
                 whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(139, 92, 246, 0.5)' }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleGetStarted}
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-semibold text-base flex items-center gap-2"
+                className="px-10 py-5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl font-bold text-xl flex items-center gap-3"
               >
                 Get Started
                 <motion.span
@@ -147,7 +147,7 @@ function Landing() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => navigate('/leaderboard')}
-                className="px-6 py-3 glass rounded-xl font-semibold text-base hover:bg-white/10 transition-colors"
+                className="px-10 py-5 glass rounded-2xl font-bold text-xl hover:bg-white/10 transition-colors"
               >
                 View Leaderboard
               </motion.button>
@@ -184,12 +184,12 @@ function Landing() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl font-bold mb-3">
+            <h2 className="text-5xl font-bold mb-5">
               Powerful <span className="text-gradient-purple">Dashboard</span>
             </h2>
-            <p className="text-lg text-gray-400">Manage your reputation from one place</p>
+            <p className="text-xl text-gray-400">Manage your reputation from one place</p>
           </motion.div>
 
           <motion.div
@@ -232,12 +232,12 @@ function Landing() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl font-bold mb-3">
+            <h2 className="text-5xl font-bold mb-5">
               Why Choose <span className="text-gradient-purple">TrustChain</span>?
             </h2>
-            <p className="text-lg text-gray-400">The future of decentralized reputation</p>
+            <p className="text-xl text-gray-400">The future of decentralized reputation</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-5">
@@ -340,10 +340,10 @@ function Landing() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl font-bold mb-3">How It Works</h2>
-            <p className="text-lg text-gray-400">Four simple steps to build your reputation</p>
+            <h2 className="text-5xl font-bold mb-5">How It Works</h2>
+            <p className="text-xl text-gray-400">Four simple steps to build your reputation</p>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-5">
@@ -414,15 +414,15 @@ function Landing() {
             viewport={{ once: true }}
             className="glass rounded-3xl p-12 glow-purple"
           >
-            <h2 className="text-4xl font-bold mb-4">Ready to Build Trust?</h2>
-            <p className="text-lg text-gray-400 mb-8">
+            <h2 className="text-5xl font-bold mb-6">Ready to Build Trust?</h2>
+            <p className="text-xl text-gray-400 mb-10">
               Join thousands of verified members on TrustChain
             </p>
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: '0 0 60px rgba(139, 92, 246, 0.6)' }}
               whileTap={{ scale: 0.95 }}
               onClick={handleGetStarted}
-              className="px-10 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-bold text-lg"
+              className="px-12 py-5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl font-bold text-xl"
             >
               Launch Application →
             </motion.button>

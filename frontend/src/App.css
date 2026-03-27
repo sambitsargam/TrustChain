@@ -1,4 +1,3 @@
-/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +10,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Root styles for router */
 #root {
   min-height: 100vh;
 }

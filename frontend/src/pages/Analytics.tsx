@@ -105,7 +105,6 @@ function Analytics() {
     return '#ef4444';
   };
 
-  const maxScore = Math.max(...trustScoreHistory.map(d => d.score));
   const maxActivity = Math.max(...activityData.map(d => d.interactions));
 
   if (loading) {

@@ -320,6 +320,21 @@ function Dashboard() {
             <span className="nav-icon">📈</span>
             <span className="nav-label">Activity</span>
           </button>
+          <div className="nav-divider"></div>
+          <button 
+            className="nav-item"
+            onClick={() => navigate('/explore')}
+          >
+            <span className="nav-icon">🔍</span>
+            <span className="nav-label">Explore</span>
+          </button>
+          <button 
+            className="nav-item"
+            onClick={() => navigate('/leaderboard')}
+          >
+            <span className="nav-icon">🏅</span>
+            <span className="nav-label">Leaderboard</span>
+          </button>
         </nav>
         <div className="sidebar-footer">
           <button className="nav-item" onClick={() => navigate('/')}>

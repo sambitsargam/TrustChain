@@ -52,7 +52,83 @@ Detailed profile pages for viewing any user's complete information and reputatio
 - "Own Profile" badge when viewing your own profile
 - Real-time updates after endorsements
 
-### 4. 🎨 Enhanced Dashboard Navigation
+### 4. 💬 Messages Page (`/messages`)
+Direct messaging system for private communication between community members.
+
+**Features:**
+- **Dual-pane interface**: Conversations list + active chat area
+- Search conversations by username or address
+- Conversation preview with:
+  - Last message snippet
+  - Timestamp
+  - Unread message count
+  - User's trust score indicator
+- Real-time messaging interface with:
+  - Sent/received message distinction
+  - Timestamp for each message
+  - Message input with Enter key support
+- Quick actions:
+  - View profile button
+  - New message button
+- Dummy data for demonstration (ready for blockchain integration)
+- Trust score displayed for each conversation
+
+### 5. 🔔 Notifications Page (`/notifications`)
+Comprehensive notification center for tracking all platform activities.
+
+**Features:**
+- **Multiple notification types**:
+  - 👍 Endorsements received
+  - 🏆 Badges earned
+  - 💬 New messages
+  - 👤 Profile views
+  - ⚙️ System updates
+- Smart filtering:
+  - All notifications
+  - Unread only
+  - By type (Endorsements, Badges, Messages)
+- Unread count badge
+- Mark all as read functionality
+- Individual notification actions:
+  - Quick action buttons (View Profile, Reply, etc.)
+  - Mark as read
+  - Navigate to relevant pages
+- Color-coded notification icons
+- Timestamp with smart formatting
+- Read/unread visual distinction
+
+### 6. 📊 Analytics Dashboard (`/analytics`)
+Advanced analytics and insights for tracking reputation metrics over time.
+
+**Features:**
+- **Key Metrics Cards**:
+  - Current trust score with trend
+  - Total interactions count
+  - Success rate percentage
+  - Badges earned count
+- **Trust Score Trend Chart**:
+  - Line graph showing score history
+  - 8-week trend visualization
+  - Gradient fill and data points
+  - Interactive SVG chart
+- **Interaction Breakdown**:
+  - Horizontal bar chart
+  - Positive/Neutral/Negative breakdown
+  - Percentage and count display
+  - Color-coded categories
+- **Weekly Activity Chart**:
+  - Column chart showing daily interactions
+  - 7-day activity visualization
+  - Hover-friendly design
+- **Insights & Recommendations**:
+  - AI-powered suggestions
+  - Badge opportunities
+  - Activity patterns
+  - Personalized tips
+- Timeframe selector: Week, Month, All Time
+- Responsive chart layouts
+
+### 7. 🎨 Enhanced Dashboard Navigation
 Updated sidebar with quick access to all features.
 
 **Navigation Items:**
@@ -61,6 +137,9 @@ Updated sidebar with quick access to all features.
 - 📈 Activity - Interaction history
 - 🔍 Explore - Browse community
 - 🏅 Leaderboard - Top rankings
+- 💬 Messages - Direct messaging
+- 🔔 Notifications - Activity alerts
+- 📊 Analytics - Detailed insights
 - 🏠 Home - Return to landing page
 
 ## 🎨 Design Highlights
@@ -116,11 +195,18 @@ All features are fully integrated with the OneChain blockchain:
 
 ## 🎯 Next Steps (Future Enhancements)
 
-- Activity feed with real-time events
-- Profile analytics with charts
-- Social features (follow/unfollow)
-- Advanced search filters
-- Notification system
-- Profile editing capabilities
+- Real blockchain integration for messaging
+- End-to-end encrypted messages
+- Group chat functionality
+- Push notifications
+- Advanced analytics with more chart types
+- Export analytics reports
+- Profile customization options
 - Reputation history timeline
 - Trust score breakdown analysis
+- Social features (follow/unfollow)
+- Activity feed with real-time events
+- Advanced search filters
+- Gamification elements
+- Achievement milestones
+- Community challenges

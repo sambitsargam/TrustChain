@@ -39,48 +39,9 @@ function Landing() {
     }
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring' as const,
-        stiffness: 100,
-      },
-    },
-  };
-
-  const features = [
-    { icon: '🔐', title: 'Decentralized Identity', description: 'Build your on-chain reputation with cryptographic verification.' },
-    { icon: '🤖', title: 'AI Trust Scoring', description: 'Advanced AI analyzes your activity for real-time trust evaluation.' },
-    { icon: '🏆', title: 'NFT Badges', description: 'Earn verifiable achievement badges as portable credentials.' },
-    { icon: '👥', title: 'Endorsements', description: 'Community members can endorse each other to boost trust scores.' },
-    { icon: '📊', title: 'Analytics', description: 'Track your trust score trends and reputation metrics.' },
-    { icon: '🌐', title: 'Global Network', description: 'Connect with trusted members across the ecosystem.' },
-  ];
-
-  const steps = [
-    { number: '01', title: 'Create Profile', description: 'Register your identity', icon: '👤' },
-    { number: '02', title: 'Build Trust', description: 'Engage with community', icon: '💬' },
-    { number: '03', title: 'Get Endorsed', description: 'Receive endorsements', icon: '👍' },
-    { number: '04', title: 'Earn Badges', description: 'Unlock achievements', icon: '🏆' },
-  ];
-
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Animated Background */}
+      {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10" />
         <motion.div
@@ -129,19 +90,21 @@ function Landing() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 z-0">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-center max-w-4xl mx-auto"
-          >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-full mb-6">
+          <div className="text-center max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-full mb-6"
+            >
               <span className="text-xl">🤖</span>
               <span className="text-xs font-medium">AI-Powered Trust System</span>
             </motion.div>
 
             <motion.h1
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
               className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
             >
               Build Your
@@ -150,18 +113,25 @@ function Landing() {
             </motion.h1>
 
             <motion.p
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
               className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto"
             >
               Decentralized identity and reputation system powered by AI. Build trust, earn badges, and connect with verified community members.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="flex flex-wrap items-center justify-center gap-4"
+            >
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(139, 92, 246, 0.5)' }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleGetStarted}
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-semibold text-base flex items-center gap-2 group"
+                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-semibold text-base flex items-center gap-2"
               >
                 Get Started
                 <motion.span
@@ -183,25 +153,25 @@ function Landing() {
 
             {/* Stats */}
             <motion.div
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
               className="grid grid-cols-3 gap-6 mt-16 max-w-3xl mx-auto"
             >
-              {[
-                { value: '5K+', label: 'Trusted Members' },
-                { value: '15K+', label: 'Endorsements' },
-                { value: '99%', label: 'AI Accuracy' },
-              ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                  className="glass rounded-2xl p-5"
-                >
-                  <div className="text-3xl font-bold text-gradient-purple mb-1">{stat.value}</div>
-                  <div className="text-xs text-gray-400">{stat.label}</div>
-                </motion.div>
-              ))}
+              <div className="glass rounded-2xl p-5">
+                <div className="text-3xl font-bold text-gradient-purple mb-1">5K+</div>
+                <div className="text-xs text-gray-400">Trusted Members</div>
+              </div>
+              <div className="glass rounded-2xl p-5">
+                <div className="text-3xl font-bold text-gradient-purple mb-1">15K+</div>
+                <div className="text-xs text-gray-400">Endorsements</div>
+              </div>
+              <div className="glass rounded-2xl p-5">
+                <div className="text-3xl font-bold text-gradient-purple mb-1">99%</div>
+                <div className="text-xs text-gray-400">AI Accuracy</div>
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -212,7 +182,6 @@ function Landing() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold mb-3">
@@ -225,27 +194,30 @@ function Landing() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
             className="glass rounded-3xl p-6 glow-purple"
           >
             <div className="grid md:grid-cols-3 gap-4">
-              {[
-                { icon: '⭐', value: '856', label: 'Trust Score', color: 'from-purple-500 to-blue-500' },
-                { icon: '🏆', value: '24', label: 'Badges Earned', color: 'from-blue-500 to-cyan-500' },
-                { icon: '👥', value: '142', label: 'Endorsements', color: 'from-purple-600 to-pink-500' },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="glass rounded-2xl p-5 cursor-pointer"
-                >
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <div className={`text-3xl font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent mb-1`}>
-                    {item.value}
-                  </div>
-                  <div className="text-sm text-gray-400">{item.label}</div>
-                </motion.div>
-              ))}
+              <div className="glass rounded-2xl p-5">
+                <div className="text-3xl mb-3">⭐</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent mb-1">
+                  856
+                </div>
+                <div className="text-sm text-gray-400">Trust Score</div>
+              </div>
+              <div className="glass rounded-2xl p-5">
+                <div className="text-3xl mb-3">🏆</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent mb-1">
+                  24
+                </div>
+                <div className="text-sm text-gray-400">Badges Earned</div>
+              </div>
+              <div className="glass rounded-2xl p-5">
+                <div className="text-3xl mb-3">👥</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-1">
+                  142
+                </div>
+                <div className="text-sm text-gray-400">Endorsements</div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -267,28 +239,94 @@ function Landing() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-5">
-            {features.map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="glass rounded-2xl p-6 cursor-pointer group"
-              >
-                <motion.div
-                  className="text-4xl mb-3"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                >
-                  {feature.icon}
-                </motion.div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-gradient-purple transition-all">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{feature.description}</p>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -10 }}
+              className="glass rounded-2xl p-6 cursor-pointer"
+            >
+              <div className="text-4xl mb-3">🔐</div>
+              <h3 className="text-xl font-bold mb-2">Decentralized Identity</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Build your on-chain reputation with cryptographic verification.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              whileHover={{ scale: 1.05, y: -10 }}
+              className="glass rounded-2xl p-6 cursor-pointer"
+            >
+              <div className="text-4xl mb-3">🤖</div>
+              <h3 className="text-xl font-bold mb-2">AI Trust Scoring</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Advanced AI analyzes your activity for real-time trust evaluation.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ scale: 1.05, y: -10 }}
+              className="glass rounded-2xl p-6 cursor-pointer"
+            >
+              <div className="text-4xl mb-3">🏆</div>
+              <h3 className="text-xl font-bold mb-2">NFT Badges</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Earn verifiable achievement badges as portable credentials.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              whileHover={{ scale: 1.05, y: -10 }}
+              className="glass rounded-2xl p-6 cursor-pointer"
+            >
+              <div className="text-4xl mb-3">👥</div>
+              <h3 className="text-xl font-bold mb-2">Endorsements</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Community members can endorse each other to boost trust scores.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              whileHover={{ scale: 1.05, y: -10 }}
+              className="glass rounded-2xl p-6 cursor-pointer"
+            >
+              <div className="text-4xl mb-3">📊</div>
+              <h3 className="text-xl font-bold mb-2">Analytics</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Track your trust score trends and reputation metrics.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              whileHover={{ scale: 1.05, y: -10 }}
+              className="glass rounded-2xl p-6 cursor-pointer"
+            >
+              <div className="text-4xl mb-3">🌐</div>
+              <h3 className="text-xl font-bold mb-2">Global Network</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Connect with trusted members across the ecosystem.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -307,24 +345,60 @@ function Landing() {
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-5">
-            {steps.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                whileHover={{ scale: 1.05 }}
-                className="glass rounded-2xl p-6 relative"
-              >
-                <div className="text-5xl font-bold text-white/10 absolute top-3 right-3">
-                  {step.number}
-                </div>
-                <div className="text-4xl mb-3">{step.icon}</div>
-                <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-400">{step.description}</p>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              className="glass rounded-2xl p-6 relative"
+            >
+              <div className="text-5xl font-bold text-white/10 absolute top-3 right-3">01</div>
+              <div className="text-4xl mb-3">👤</div>
+              <h3 className="text-lg font-bold mb-2">Create Profile</h3>
+              <p className="text-sm text-gray-400">Register your identity</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+              className="glass rounded-2xl p-6 relative"
+            >
+              <div className="text-5xl font-bold text-white/10 absolute top-3 right-3">02</div>
+              <div className="text-4xl mb-3">💬</div>
+              <h3 className="text-lg font-bold mb-2">Build Trust</h3>
+              <p className="text-sm text-gray-400">Engage with community</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+              className="glass rounded-2xl p-6 relative"
+            >
+              <div className="text-5xl font-bold text-white/10 absolute top-3 right-3">03</div>
+              <div className="text-4xl mb-3">👍</div>
+              <h3 className="text-lg font-bold mb-2">Get Endorsed</h3>
+              <p className="text-sm text-gray-400">Receive endorsements</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              className="glass rounded-2xl p-6 relative"
+            >
+              <div className="text-5xl font-bold text-white/10 absolute top-3 right-3">04</div>
+              <div className="text-4xl mb-3">🏆</div>
+              <h3 className="text-lg font-bold mb-2">Earn Badges</h3>
+              <p className="text-sm text-gray-400">Unlock achievements</p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -338,9 +412,7 @@ function Landing() {
             viewport={{ once: true }}
             className="glass rounded-3xl p-12 glow-purple"
           >
-            <h2 className="text-4xl font-bold mb-4">
-              Ready to Build Trust?
-            </h2>
+            <h2 className="text-4xl font-bold mb-4">Ready to Build Trust?</h2>
             <p className="text-lg text-gray-400 mb-8">
               Join thousands of verified members on TrustChain
             </p>
@@ -365,24 +437,26 @@ function Landing() {
                 <span className="text-2xl">🔗</span>
                 <span className="text-lg font-bold text-gradient-purple">TrustChain</span>
               </div>
-              <p className="text-gray-400 text-xs">
-                Building trust on OneChain blockchain
-              </p>
+              <p className="text-gray-400 text-xs">Building trust on OneChain blockchain</p>
             </div>
-            {[
-              { title: 'Product', links: ['Features', 'Pricing', 'Security'] },
-              { title: 'Resources', links: ['Documentation', 'API', 'Support'] },
-              { title: 'Company', links: ['About', 'Blog', 'Contact'] },
-            ].map((col, i) => (
-              <div key={i}>
-                <h4 className="font-semibold mb-3 text-sm">{col.title}</h4>
-                {col.links.map((link, j) => (
-                  <div key={j} className="text-gray-400 text-xs mb-2 hover:text-white cursor-pointer transition-colors">
-                    {link}
-                  </div>
-                ))}
-              </div>
-            ))}
+            <div>
+              <h4 className="font-semibold mb-3 text-sm">Product</h4>
+              <div className="text-gray-400 text-xs mb-2 hover:text-white cursor-pointer transition-colors">Features</div>
+              <div className="text-gray-400 text-xs mb-2 hover:text-white cursor-pointer transition-colors">Pricing</div>
+              <div className="text-gray-400 text-xs mb-2 hover:text-white cursor-pointer transition-colors">Security</div>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3 text-sm">Resources</h4>
+              <div className="text-gray-400 text-xs mb-2 hover:text-white cursor-pointer transition-colors">Documentation</div>
+              <div className="text-gray-400 text-xs mb-2 hover:text-white cursor-pointer transition-colors">API</div>
+              <div className="text-gray-400 text-xs mb-2 hover:text-white cursor-pointer transition-colors">Support</div>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3 text-sm">Company</h4>
+              <div className="text-gray-400 text-xs mb-2 hover:text-white cursor-pointer transition-colors">About</div>
+              <div className="text-gray-400 text-xs mb-2 hover:text-white cursor-pointer transition-colors">Blog</div>
+              <div className="text-gray-400 text-xs mb-2 hover:text-white cursor-pointer transition-colors">Contact</div>
+            </div>
           </div>
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-xs">© 2026 TrustChain. All rights reserved.</p>

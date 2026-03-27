@@ -62,7 +62,8 @@ function Landing() {
         animate={{ y: 0 }}
         className="fixed top-0 left-0 right-0 z-[100] glass border-b border-white/10"
       >
-        <div className="w-full px-8 lg:px-16 xl:px-24 py-4 flex items-center justify-between">
+        <div className="w-full" style={{ padding: '1rem 5%' }}>
+          <div className="flex items-center justify-between">
           <motion.div
             className="flex items-center gap-2 cursor-pointer"
             whileHover={{ scale: 1.05 }}
@@ -85,27 +86,28 @@ function Landing() {
             </div>
           </div>
         </div>
+        </div>
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-8 lg:px-16 xl:px-24 z-0">
+      <section className="relative min-h-screen flex items-center justify-center z-0" style={{ padding: '0 5%' }}>
         <div className="w-full">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-8"
             >
               <span className="text-xl">🤖</span>
-              <span className="text-xs font-medium">AI-Powered Trust System</span>
+              <span className="text-sm font-medium">AI-Powered Trust System</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+              className="text-7xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight"
             >
               Build Your
               <br />
@@ -116,7 +118,7 @@ function Landing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-lg text-gray-400 mb-10"
+              className="text-xl text-gray-400 mb-12"
             >
               Decentralized identity and reputation system powered by AI. Build trust, earn badges, and connect with verified community members.
             </motion.p>
@@ -125,7 +127,7 @@ function Landing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-wrap items-center justify-center gap-4"
+              className="flex flex-wrap items-center justify-center gap-6 mb-16"
             >
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(139, 92, 246, 0.5)' }}
@@ -156,7 +158,7 @@ function Landing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="grid grid-cols-3 gap-6 mt-16"
+              className="grid grid-cols-3 gap-8 mt-16"
             >
               <div className="glass rounded-2xl p-5 flex flex-col items-center justify-center">
                 <div className="text-3xl font-bold text-gradient-purple mb-1">5K+</div>
@@ -176,7 +178,7 @@ function Landing() {
       </section>
 
       {/* Dashboard Preview */}
-      <section className="relative py-20 px-8 lg:px-16 xl:px-24 z-0">
+      <section className="relative py-20 z-0" style={{ padding: '5rem 5%' }}>
         <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -224,7 +226,7 @@ function Landing() {
       </section>
 
       {/* Features Grid */}
-      <section className="relative py-20 px-8 lg:px-16 xl:px-24 z-0">
+      <section className="relative py-20 z-0" style={{ padding: '5rem 5%' }}>
         <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -332,7 +334,7 @@ function Landing() {
       </section>
 
       {/* How It Works */}
-      <section className="relative py-20 px-8 lg:px-16 xl:px-24 z-0">
+      <section className="relative py-20 z-0" style={{ padding: '5rem 5%' }}>
         <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -404,7 +406,7 @@ function Landing() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 px-8 lg:px-16 xl:px-24 z-0">
+      <section className="relative py-24 z-0" style={{ padding: '6rem 5%' }}>
         <div className="w-full text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -429,7 +431,7 @@ function Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="relative border-t border-white/10 py-10 px-8 lg:px-16 xl:px-24 z-0">
+      <footer className="relative border-t border-white/10 z-0" style={{ padding: '2.5rem 5%' }}>
         <div className="w-full">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>

@@ -335,6 +335,27 @@ function Dashboard() {
             <span className="nav-icon">🏅</span>
             <span className="nav-label">Leaderboard</span>
           </button>
+          <button 
+            className="nav-item"
+            onClick={() => navigate('/messages')}
+          >
+            <span className="nav-icon">💬</span>
+            <span className="nav-label">Messages</span>
+          </button>
+          <button 
+            className="nav-item"
+            onClick={() => navigate('/notifications')}
+          >
+            <span className="nav-icon">🔔</span>
+            <span className="nav-label">Notifications</span>
+          </button>
+          <button 
+            className="nav-item"
+            onClick={() => navigate('/analytics')}
+          >
+            <span className="nav-icon">📊</span>
+            <span className="nav-label">Analytics</span>
+          </button>
         </nav>
         <div className="sidebar-footer">
           <button className="nav-item" onClick={() => navigate('/')}>

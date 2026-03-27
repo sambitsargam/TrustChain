@@ -88,9 +88,9 @@ function Landing() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-8 lg:px-16 xl:px-24 z-0">
+      <section className="relative min-h-screen flex items-center justify-center px-8 lg:px-16 xl:px-24 z-0">
         <div className="w-full">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ function Landing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto"
+              className="text-lg text-gray-400 mb-10"
             >
               Decentralized identity and reputation system powered by AI. Build trust, earn badges, and connect with verified community members.
             </motion.p>
@@ -156,17 +156,17 @@ function Landing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="grid grid-cols-3 gap-6 mt-16 max-w-3xl mx-auto"
+              className="grid grid-cols-3 gap-6 mt-16"
             >
-              <div className="glass rounded-2xl p-5">
+              <div className="glass rounded-2xl p-5 flex flex-col items-center justify-center">
                 <div className="text-3xl font-bold text-gradient-purple mb-1">5K+</div>
                 <div className="text-xs text-gray-400">Trusted Members</div>
               </div>
-              <div className="glass rounded-2xl p-5">
+              <div className="glass rounded-2xl p-5 flex flex-col items-center justify-center">
                 <div className="text-3xl font-bold text-gradient-purple mb-1">15K+</div>
                 <div className="text-xs text-gray-400">Endorsements</div>
               </div>
-              <div className="glass rounded-2xl p-5">
+              <div className="glass rounded-2xl p-5 flex flex-col items-center justify-center">
                 <div className="text-3xl font-bold text-gradient-purple mb-1">99%</div>
                 <div className="text-xs text-gray-400">AI Accuracy</div>
               </div>
@@ -197,21 +197,21 @@ function Landing() {
             className="glass rounded-3xl p-6 glow-purple"
           >
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="glass rounded-2xl p-5">
+              <div className="glass rounded-2xl p-5 flex flex-col items-center justify-center text-center">
                 <div className="text-3xl mb-3">⭐</div>
                 <div className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent mb-1">
                   856
                 </div>
                 <div className="text-sm text-gray-400">Trust Score</div>
               </div>
-              <div className="glass rounded-2xl p-5">
+              <div className="glass rounded-2xl p-5 flex flex-col items-center justify-center text-center">
                 <div className="text-3xl mb-3">🏆</div>
                 <div className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent mb-1">
                   24
                 </div>
                 <div className="text-sm text-gray-400">Badges Earned</div>
               </div>
-              <div className="glass rounded-2xl p-5">
+              <div className="glass rounded-2xl p-5 flex flex-col items-center justify-center text-center">
                 <div className="text-3xl mb-3">👥</div>
                 <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-1">
                   142
@@ -244,7 +244,7 @@ function Landing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="glass rounded-2xl p-6 cursor-pointer"
+              className="glass rounded-2xl p-6 cursor-pointer flex flex-col items-center text-center"
             >
               <div className="text-4xl mb-3">🔐</div>
               <h3 className="text-xl font-bold mb-2">Decentralized Identity</h3>
@@ -259,7 +259,7 @@ function Landing() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="glass rounded-2xl p-6 cursor-pointer"
+              className="glass rounded-2xl p-6 cursor-pointer flex flex-col items-center text-center"
             >
               <div className="text-4xl mb-3">🤖</div>
               <h3 className="text-xl font-bold mb-2">AI Trust Scoring</h3>
@@ -274,7 +274,7 @@ function Landing() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="glass rounded-2xl p-6 cursor-pointer"
+              className="glass rounded-2xl p-6 cursor-pointer flex flex-col items-center text-center"
             >
               <div className="text-4xl mb-3">🏆</div>
               <h3 className="text-xl font-bold mb-2">NFT Badges</h3>
@@ -289,7 +289,7 @@ function Landing() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="glass rounded-2xl p-6 cursor-pointer"
+              className="glass rounded-2xl p-6 cursor-pointer flex flex-col items-center text-center"
             >
               <div className="text-4xl mb-3">👥</div>
               <h3 className="text-xl font-bold mb-2">Endorsements</h3>
@@ -304,7 +304,7 @@ function Landing() {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="glass rounded-2xl p-6 cursor-pointer"
+              className="glass rounded-2xl p-6 cursor-pointer flex flex-col items-center text-center"
             >
               <div className="text-4xl mb-3">📊</div>
               <h3 className="text-xl font-bold mb-2">Analytics</h3>
@@ -319,7 +319,7 @@ function Landing() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="glass rounded-2xl p-6 cursor-pointer"
+              className="glass rounded-2xl p-6 cursor-pointer flex flex-col items-center text-center"
             >
               <div className="text-4xl mb-3">🌐</div>
               <h3 className="text-xl font-bold mb-2">Global Network</h3>
@@ -350,7 +350,7 @@ function Landing() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
-              className="glass rounded-2xl p-6 relative"
+              className="glass rounded-2xl p-6 relative flex flex-col items-center text-center"
             >
               <div className="text-5xl font-bold text-white/10 absolute top-3 right-3">01</div>
               <div className="text-4xl mb-3">👤</div>
@@ -364,7 +364,7 @@ function Landing() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               whileHover={{ scale: 1.05 }}
-              className="glass rounded-2xl p-6 relative"
+              className="glass rounded-2xl p-6 relative flex flex-col items-center text-center"
             >
               <div className="text-5xl font-bold text-white/10 absolute top-3 right-3">02</div>
               <div className="text-4xl mb-3">💬</div>
@@ -378,7 +378,7 @@ function Landing() {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
               whileHover={{ scale: 1.05 }}
-              className="glass rounded-2xl p-6 relative"
+              className="glass rounded-2xl p-6 relative flex flex-col items-center text-center"
             >
               <div className="text-5xl font-bold text-white/10 absolute top-3 right-3">03</div>
               <div className="text-4xl mb-3">👍</div>
@@ -392,7 +392,7 @@ function Landing() {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
               whileHover={{ scale: 1.05 }}
-              className="glass rounded-2xl p-6 relative"
+              className="glass rounded-2xl p-6 relative flex flex-col items-center text-center"
             >
               <div className="text-5xl font-bold text-white/10 absolute top-3 right-3">04</div>
               <div className="text-4xl mb-3">🏆</div>
@@ -405,7 +405,7 @@ function Landing() {
 
       {/* CTA Section */}
       <section className="relative py-24 px-8 lg:px-16 xl:px-24 z-0">
-        <div className="w-full max-w-5xl mx-auto text-center">
+        <div className="w-full text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}

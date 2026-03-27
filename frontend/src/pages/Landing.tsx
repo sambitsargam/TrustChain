@@ -79,7 +79,7 @@ function Landing() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10" />
@@ -101,21 +101,21 @@ function Landing() {
         animate={{ y: 0 }}
         className="fixed top-0 left-0 right-0 z-[100] glass border-b border-white/10"
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <motion.div
             className="flex items-center gap-2 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             onClick={() => navigate('/')}
           >
-            <span className="text-3xl">🔗</span>
-            <span className="text-xl font-bold text-gradient-purple">TrustChain</span>
+            <span className="text-2xl sm:text-3xl">🔗</span>
+            <span className="text-lg sm:text-xl font-bold text-gradient-purple">TrustChain</span>
           </motion.div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 sm:gap-6">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate('/explore')}
-              className="text-sm text-gray-300 hover:text-white transition-colors"
+              className="text-xs sm:text-sm text-gray-300 hover:text-white transition-colors"
             >
               Explore
             </motion.button>
@@ -127,22 +127,22 @@ function Landing() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 z-0">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 z-0">
+        <div className="w-full max-w-7xl mx-auto">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center max-w-4xl mx-auto"
+            className="text-center w-full max-w-4xl mx-auto"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-full mb-6">
-              <span className="text-xl">🤖</span>
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 glass rounded-full mb-4 sm:mb-6">
+              <span className="text-lg sm:text-xl">🤖</span>
               <span className="text-xs font-medium">AI-Powered Trust System</span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2"
             >
               Build Your
               <br />
@@ -151,17 +151,17 @@ function Landing() {
 
             <motion.p
               variants={itemVariants}
-              className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto"
+              className="text-sm sm:text-base md:text-lg text-gray-400 mb-6 sm:mb-10 w-full max-w-2xl mx-auto px-4"
             >
               Decentralized identity and reputation system powered by AI. Build trust, earn badges, and connect with verified community members.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-4">
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4 mb-12 sm:mb-16">
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(139, 92, 246, 0.5)' }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleGetStarted}
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-semibold text-base flex items-center gap-2 group"
+                className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-semibold text-sm sm:text-base flex items-center justify-center gap-2 group"
               >
                 Get Started
                 <motion.span
@@ -175,7 +175,7 @@ function Landing() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => navigate('/leaderboard')}
-                className="px-6 py-3 glass rounded-xl font-semibold text-base hover:bg-white/10 transition-colors"
+                className="w-full sm:w-auto px-6 py-3 glass rounded-xl font-semibold text-sm sm:text-base hover:bg-white/10 transition-colors"
               >
                 View Leaderboard
               </motion.button>
@@ -184,7 +184,7 @@ function Landing() {
             {/* Stats */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-3 gap-6 mt-16 max-w-3xl mx-auto"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full max-w-3xl mx-auto px-4"
             >
               {[
                 { value: '5K+', label: 'Trusted Members' },
@@ -194,9 +194,9 @@ function Landing() {
                 <motion.div
                   key={i}
                   whileHover={{ scale: 1.05 }}
-                  className="glass rounded-2xl p-5"
+                  className="glass rounded-2xl p-4 sm:p-5"
                 >
-                  <div className="text-3xl font-bold text-gradient-purple mb-1">{stat.value}</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-gradient-purple mb-1">{stat.value}</div>
                   <div className="text-xs text-gray-400">{stat.label}</div>
                 </motion.div>
               ))}
@@ -206,21 +206,21 @@ function Landing() {
       </section>
 
       {/* Features Grid */}
-      <section className="relative py-20 px-6 z-0">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-12 sm:py-20 px-4 sm:px-6 z-0">
+        <div className="w-full max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-4xl font-bold mb-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
               Why <span className="text-gradient-purple">TrustChain</span>?
             </h2>
-            <p className="text-lg text-gray-400">The future of decentralized reputation</p>
+            <p className="text-sm sm:text-base md:text-lg text-gray-400">The future of decentralized reputation</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {features.map((feature, i) => (
               <motion.div
                 key={i}
@@ -229,18 +229,18 @@ function Landing() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ scale: 1.05, y: -10 }}
-                className="glass rounded-2xl p-6 cursor-pointer group"
+                className="glass rounded-2xl p-5 sm:p-6 cursor-pointer group"
               >
                 <motion.div
-                  className="text-4xl mb-3"
+                  className="text-3xl sm:text-4xl mb-3"
                   whileHover={{ scale: 1.2, rotate: 10 }}
                 >
                   {feature.icon}
                 </motion.div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-gradient-purple transition-all">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-gradient-purple transition-all">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{feature.description}</p>
+                <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>

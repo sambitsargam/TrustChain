@@ -1,13 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { ConnectButton, useCurrentAccount } from '@onelabs/dapp-kit';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 function Landing() {
   const navigate = useNavigate();
   const account = useCurrentAccount();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [shouldNavigate, setShouldNavigate] = useState(false);
+  const connectButtonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -31,10 +32,12 @@ function Landing() {
     } else {
       setShouldNavigate(true);
       // Trigger wallet connection by clicking the connect button
-      const connectBtn = document.querySelector('[data-testid="connect-button"]') as HTMLButtonElement;
-      if (connectBtn) {
-        connectBtn.click();
-      }
+      setTimeout(() => {
+        const connectBtn = connectButtonRef.current?.querySelector('button');
+        if (connectBtn) {
+          connectBtn.click();
+        }
+      }, 100);
     }
   };
 
@@ -77,7 +80,9 @@ function Landing() {
           </motion.div>
           <div className="flex items-center gap-6">
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => navigate('/explore')} className="text-sm text-gray-300 hover:text-white transition-colors">Explore</motion.button>
-            <ConnectButton />
+            <div ref={connectButtonRef}>
+              <ConnectButton />
+            </div>
           </div>
         </div>
       </motion.nav>

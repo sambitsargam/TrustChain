@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { ConnectButton } from '@onelabs/dapp-kit';
+import { ConnectButton, useCurrentAccount } from '@onelabs/dapp-kit';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 function Landing() {
   const navigate = useNavigate();
+  const account = useCurrentAccount();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [shouldNavigate, setShouldNavigate] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -14,6 +16,27 @@ function Landing() {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
+
+  // Navigate to app when wallet is connected and user clicked a button
+  useEffect(() => {
+    if (account && shouldNavigate) {
+      navigate('/app');
+      setShouldNavigate(false);
+    }
+  }, [account, shouldNavigate, navigate]);
+
+  const handleGetStarted = () => {
+    if (account) {
+      navigate('/app');
+    } else {
+      setShouldNavigate(true);
+      // Trigger wallet connection by clicking the connect button
+      const connectBtn = document.querySelector('[data-testid="connect-button"]') as HTMLButtonElement;
+      if (connectBtn) {
+        connectBtn.click();
+      }
+    }
+  };
 
   const features = [
     { icon: '🔐', title: 'Decentralized Identity', description: 'Build your on-chain reputation with cryptographic verification.' },
@@ -73,7 +96,7 @@ function Landing() {
             Decentralized identity and reputation system powered by AI. Build trust, earn badges, and connect with verified community members.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-wrap items-center justify-center gap-4">
-            <motion.button whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(139, 92, 246, 0.5)' }} whileTap={{ scale: 0.95 }} onClick={() => navigate('/app')} className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-semibold text-base flex items-center gap-2">
+            <motion.button whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(139, 92, 246, 0.5)' }} whileTap={{ scale: 0.95 }} onClick={handleGetStarted} className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-semibold text-base flex items-center gap-2">
               Get Started <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>→</motion.span>
             </motion.button>
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => navigate('/leaderboard')} className="px-6 py-3 glass rounded-xl font-semibold text-base hover:bg-white/10 transition-colors">View Leaderboard</motion.button>
@@ -134,7 +157,7 @@ function Landing() {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="glass rounded-3xl p-12 glow-purple">
             <h2 className="text-4xl font-bold mb-4">Ready to Build Trust?</h2>
             <p className="text-lg text-gray-400 mb-8">Join thousands of verified members on TrustChain</p>
-            <motion.button whileHover={{ scale: 1.05, boxShadow: '0 0 60px rgba(139, 92, 246, 0.6)' }} whileTap={{ scale: 0.95 }} onClick={() => navigate('/app')} className="px-10 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-bold text-lg">Launch App →</motion.button>
+            <motion.button whileHover={{ scale: 1.05, boxShadow: '0 0 60px rgba(139, 92, 246, 0.6)' }} whileTap={{ scale: 0.95 }} onClick={handleGetStarted} className="px-10 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-bold text-lg">Launch App →</motion.button>
           </motion.div>
         </div>
       </section>

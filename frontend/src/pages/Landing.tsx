@@ -62,7 +62,7 @@ function Landing() {
         animate={{ y: 0 }}
         className="fixed top-0 left-0 right-0 z-[100] glass border-b border-white/10"
       >
-        <div className="container mx-auto px-8 py-4 flex items-center justify-between">
+        <div className="w-full px-8 lg:px-16 xl:px-24 py-4 flex items-center justify-between">
           <motion.div
             className="flex items-center gap-2 cursor-pointer"
             whileHover={{ scale: 1.05 }}
@@ -88,8 +88,8 @@ function Landing() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-8 z-0">
-        <div className="container mx-auto">
+      <section className="relative pt-32 pb-20 px-8 lg:px-16 xl:px-24 z-0">
+        <div className="w-full">
           <div className="text-center max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -176,8 +176,8 @@ function Landing() {
       </section>
 
       {/* Dashboard Preview */}
-      <section className="relative py-20 px-8 z-0">
-        <div className="container mx-auto">
+      <section className="relative py-20 px-8 lg:px-16 xl:px-24 z-0">
+        <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -224,8 +224,8 @@ function Landing() {
       </section>
 
       {/* Features Grid */}
-      <section className="relative py-20 px-8 z-0">
-        <div className="container mx-auto max-w-[1400px]">
+      <section className="relative py-20 px-8 lg:px-16 xl:px-24 z-0">
+        <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -332,8 +332,8 @@ function Landing() {
       </section>
 
       {/* How It Works */}
-      <section className="relative py-20 px-8 z-0">
-        <div className="container mx-auto max-w-[1400px]">
+      <section className="relative py-20 px-8 lg:px-16 xl:px-24 z-0">
+        <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -404,8 +404,8 @@ function Landing() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 px-8 z-0">
-        <div className="container mx-auto max-w-5xl text-center">
+      <section className="relative py-24 px-8 lg:px-16 xl:px-24 z-0">
+        <div className="w-full max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -429,8 +429,8 @@ function Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="relative border-t border-white/10 py-10 px-8 z-0">
-        <div className="container mx-auto">
+      <footer className="relative border-t border-white/10 py-10 px-8 lg:px-16 xl:px-24 z-0">
+        <div className="w-full">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-3">
